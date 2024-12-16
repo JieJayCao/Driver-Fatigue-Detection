@@ -41,7 +41,7 @@ The configuration settings are defined in the `config` dictionary within the scr
 
 ## Dataset
 
-The SEED-VIG dataset is stored in the `Dataset/SEED-VIG-Subset` directory. Each `.npy` file corresponds to the EEG signals of a single subject.
+The SEED-VIG [dataset](https://figshare.com/articles/dataset/Extracted_SEED-VIG_dataset_for_cross-dataset_driver_drowsiness_recognition/26104987?file=47271799) is stored in the `Dataset/SEED-VIG-Subset` directory. Each `.npy` file corresponds to the EEG signals of a single subject.
 
 
 ## Results
