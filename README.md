@@ -1,33 +1,49 @@
-# Driver-Fatigue-Detection
+# DualFusion EEG Classification
 DualFusion: Efficient Fusion of Time and Frequency Domain Features for EEG-Based Driver Fatigue Detectio.
 This is a graduate course final project for ELEC 872 at Dept. of ECE, Queen's University.
 
+This project implements a deep learning model, DualFusion, for EEG-based classification tasks. The model is designed to classify EEG signals into different states, such as awake and fatigue, using PyTorch and PyTorch Lightning.
 
-## Overview
-DualFusion is a deep learning model designed for EEG-based fatigue detection. It employs a dual-stream architecture that combines spectral analysis and temporal features to achieve robust fatigue state classification.
+## Introduction
 
-## Key Features
-- Dual-stream architecture combining FFT and temporal features
-- Support for both intra-subject and inter-subject classification
-- Lightweight model design with depthwise separable convolutions
-- High recall rate optimized for safety-critical applications
+DualFusion is a neural network model that combines frequency and temporal representations of EEG signals to improve classification accuracy. It is designed to handle both intra-subject and inter-subject classification tasks.
 
-## Model Architecture
-The model consists of two main processing streams:
-1. Spectral Stream: Processes frequency domain features using FFT and linear embedding
-2. Temporal Stream: Extracts temporal features using multi-scale convolutions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/JieJayCao/Driver-Fatigue-Detection.git
+   ```
+2. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+1. Prepare your dataset in the specified format and update the paths in the script.
+2. Run the training script:
+   ```bash
+   python DualFusion.py
+   ```
+
+
+## Configuration
+
+The configuration settings are defined in the `config` dictionary within the script. Key parameters include:
+
+
+- `subjects_num`: Number of subjects in the dataset.
+- `n_epochs`: Number of training epochs.
+- `batch_size`: Batch size for training.
+- `save_name`: Name of the model checkpoint file.
+- `log_path1`: Path to save training logs.
+- `num_class`: Number of classes in the classification task.
+
 
 ## Dataset
-The model is evaluated on the SEED-VIG dataset, which contains:
-- EEG recordings from 12 subjects
-- Binary classification: Alert (0) vs. Fatigue (1) states
-- 17 EEG channels
 
-## Requirements
-- Python 3.7+
-- PyTorch 1.8+
-- PyTorch Lightning
-- NumPy
-- scikit-learn
-- tqdm
+The SEED-VIG dataset is stored in the `Dataset/SEED-VIG-Subset` directory. Each `.npy` file corresponds to the EEG signals of a single subject.
 
+
+## Results
+
+The model's performance is evaluated using accuracy, precision, recall, and F1-score. These metrics are logged during training and testing phases. All experimental results of the comparison methods are stored in the `SOTA methods/` directory.
